@@ -1,13 +1,8 @@
 import MENU from "./components/Title.jsx";
 import Todolist from "./components/TodoList.jsx";
 import Action from "./components/Actions.jsx";
-import ImageList from "./components/ImagList.jsx";
+import ImageList, { array_imgPath } from "./components/ImagList.jsx";
 
-const array_imgPath = [
-  "https://images.pexels.com/photos/4586902/pexels-photo-4586902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/7888969/pexels-photo-7888969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/5990265/pexels-photo-5990265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-];
 const todos = [
   {
     title: "item1",

@@ -13,6 +13,7 @@ export default function Todolist(props) {
               <span>{props.title}</span>
             </div>
             <div className="col-sm" id="">
+
                 <div className="btn-list">
               <button className="btn btn-outline-danger btn-sm ">
               <i className="fa-solid fa-delete-left"></i>
