@@ -54,13 +54,17 @@ button.btn-outline-success{
     align-items: center;
     margin: 1rem;
     padding: 1rem;
-    background-color: #F7F7F7;
+    background-image: url("./img/pattern-randomized.svg");
+    background-size: 1%;
+  
+    
+
   }
   #right-wall {
     text-align: left;
     margin: 1rem;
     padding: 1rem;
-    background-color:#F7F7F7;
+    
     
   }
   .menu{
@@ -94,6 +98,7 @@ button.btn-outline-success{
   
   .navbar {
       padding: 0 0 4.5rem;
+      
   }
   
   .nav-item {

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import MENU from "./components/Title.jsx";
 import Todolist from "./components/TodoList.jsx";
 import Action from "./components/Actions.jsx";
@@ -18,7 +20,12 @@ const todos = [
   },
 ];
 
+
+
 export function App() {
+ 
+const [List, setList]=useState(todos);
+
   return (
     <div>
       <MENU />
@@ -27,9 +34,17 @@ export function App() {
         <div className="container">
           <div className="row">
             <div className="col-sm" id="left-wall">
-              <Action />
+              <Action handelSubmit={(value)=>{
+                setList([
+                  ...List,
+                  {
+                    title:value,
+                    status:false,
+                  },
+                ]);
+              }}/>
 
-              {todos.map((item) => {
+              {List.map((item) => {
                 return <Todolist title={item.title} status={item.status} />;
               })}
             </div>

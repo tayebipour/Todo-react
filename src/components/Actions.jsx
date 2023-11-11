@@ -1,8 +1,11 @@
-function onAddItem() {
-  console.log("clikcd");
-}
+import { useState } from "react";
+// let my_string="";
 
-export default function Action() {
+export default function Action(props) {
+  
+  const [my_string, update_string] = useState("");
+  
+  
   return (
     <div>
       <div className="form">
@@ -14,7 +17,15 @@ export default function Action() {
           </div>
 
           <form id="todo-from" />
-          <input type="text" className="form-control" id="title" />
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            onKeyUp={(e) => {
+              let char = e.key;
+              update_string(my_string+char);
+            }}
+          />
         </div>
 
         <select
@@ -31,7 +42,9 @@ export default function Action() {
         <button
           type="submit"
           className="btn btn-outline-success d-grid gap-2 col-6 mx-auto"
-          onClick={onAddItem}
+          onClick={()=>{
+            props.handelSubmit(my_string);
+          }}
         >
           Save
         </button>
