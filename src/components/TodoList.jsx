@@ -1,4 +1,8 @@
+import { useState } from "react";
+
+
 export default function Todolist(props) {
+  const [checked, setChecked] = useState(false);
   return (
     <div className="list">
       <div className="item form-check form-switch">
@@ -8,7 +12,11 @@ export default function Todolist(props) {
               <input
                 type="checkbox"
                 className="form-check-input"
-                checked={props.status}
+                checked={checked}
+                onChange={(e)=>{
+                  setChecked(e.target.checked);
+                  console.log(e);
+                }}
               />
               <span>{props.title}</span>
             </div>

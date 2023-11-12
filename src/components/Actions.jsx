@@ -2,10 +2,8 @@ import { useState } from "react";
 // let my_string="";
 
 export default function Action(props) {
-  
-  const [my_string, update_string] = useState("");
-  
-  
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <div>
       <div className="form">
@@ -18,12 +16,12 @@ export default function Action(props) {
 
           <form id="todo-from" />
           <input
+            value={inputValue}
             type="text"
             className="form-control"
             id="title"
             onKeyUp={(e) => {
-              let char = e.key;
-              update_string(my_string+char);
+              setInputValue(inputValue + e.key);
             }}
           />
         </div>
@@ -42,8 +40,9 @@ export default function Action(props) {
         <button
           type="submit"
           className="btn btn-outline-success d-grid gap-2 col-6 mx-auto"
-          onClick={()=>{
-            props.handelSubmit(my_string);
+          onClick={() => {
+            props.handelSubmit(inputValue);
+            setInputValue("");
           }}
         >
           Save

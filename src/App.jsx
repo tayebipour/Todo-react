@@ -42,10 +42,10 @@ const [List, setList]=useState(todos);
                     status:false,
                   },
                 ]);
-              }}/>
+              }} />
 
               {List.map((item) => {
-                return <Todolist title={item.title} status={item.status} />;
+                return (<Todolist title={item.title} status={item.status} />);
               })}
             </div>
 
