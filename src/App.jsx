@@ -44,7 +44,6 @@ export function App() {
       }
       return item;
     });
-    console.log("toggleStatus", List, nextList);
     setList(nextList);
   };
 
